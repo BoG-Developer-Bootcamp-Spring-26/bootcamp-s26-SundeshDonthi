@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bits of Good – Intro Card</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <main class="page">
+
+            <section class="card" id="card" aria-label="Intro card for Bits of Good">
+
+                <!-- TWO-PANEL COVER -->
+                <div class="card-cover-left" id="cover-left"></div>
+                <div class="card-cover-right" id="cover-right"></div>
+
+                <button class="reveal-button" id="reveal-button">
+                    Click to reveal
+                </button>
+
+                <div class="photo-container">
+                    <img src="IMG_5434.jpg" alt="Photo of Me" class="profile-photo">
+                </div>
+
+                <div class="card-header">
+                    <h1 class="name">Sundesh Donthi</h1>
+                    <p class="tagline">Computer Science @ Georgia Tech</p>
+                    <p class="meta">Year: 1st Year Undergraduate</p>
+                </div>
+
+                <div class="card-body">
+                    <div class="info-row">
+                        <h2 class="section-title">Where I’m From</h2>
+                        <p class="section-text">Raleigh, North Carolina</p>
+                    </div>
+
+                    <div class="info-row">
+                        <h2 class="section-title">Social Good Passion</h2>
+                        <p class="section-text">
+                          I’m passionate about creating real-world impact through technology and teamwork. 
+                          In high school, I helped raise over $230,000 on a 12-person team for the American Cancer Society,
+                          and I’m eager to keep using my skills to support nonprofits.
+                        </p>
+                        <p class="section-text">
+                            At Georgia Tech, I’m excited to use my skills in computer science to support nonprofits.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button class="toggle-button" id="more-button">Fun fact ↓</button>
+                    <div class="more-panel" id="more-panel">
+                        <p class="section-text">I lived in Dubai for 3 years!</p>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const leftCover = document.getElementById("cover-left");
+                const rightCover = document.getElementById("cover-right");
+                const revealButton = document.getElementById("reveal-button");
+                const moreButton = document.getElementById("more-button");
+                const morePanel = document.getElementById("more-panel");
+
+                revealButton.addEventListener("click", () => {
+                    leftCover.classList.add("slide-left");
+                    rightCover.classList.add("slide-right");
+                    revealButton.classList.add("hide-button");
+                });
+
+                moreButton.addEventListener("click", () => {
+                    morePanel.classList.toggle("open");
+                    moreButton.textContent = morePanel.classList.contains("open")
+                        ? "Fun fact ↑"
+                        : "Fun fact ↓";
+                });
+            });
+        </script>
+
+    </body>
+</html>
